@@ -4,6 +4,15 @@ metadata:
   name: c2c-snap-aws-ns
   
 ---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: c2c-snap-aws-config
+  namespace: c2c-snap-aws-ns
+data:
+  SNAP_ENV: Dev
+
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -22,6 +31,9 @@ spec:
       containers:
         - name: back-end
           image: 792373136340.dkr.ecr.us-east-2.amazonaws.com/cisco_pov:e9a693c6b4251f1b8a0a31bae24385f747939bae
+          envFrom:
+            - configMapRef:
+                name: c2c-snap-aws-config
 
 ---
 #Service

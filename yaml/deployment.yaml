@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
         - name: back-end
-          image: 792373136340.dkr.ecr.us-east-2.amazonaws.com/cisco_pov:2ec17311a2069aed5129593cb28dc3526a8bb632
+          image: 792373136340.dkr.ecr.us-east-2.amazonaws.com/cisco_pov:7d305f104a34e1a3ec3d48c26fadb1373cf662ea
           envFrom:
             - configMapRef:
                 name: c2c-snap-aws-config
